@@ -1,0 +1,104 @@
+// output: index.html
+include site/_config.jade
+
++html5
+  +head(title, stylesheets, keywords, description)
+  body    
+    nav(role="main")
+      +menu('index', menu, 'horizontal', '#', ' ', 'scrollLink')
+      .btnshow
+    .main
+      
+      
+      +sliderbg('body', 'site/img/bg.jpg', 'site/img/bg2.jpg', 'site/img/bg3.jpg')
+      section#inicio 
+        .container
+          .col4.push4.logotipo
+            img(src="site/img/zarco_logo.png").w100
+        .container.startText
+          div(data-sr="wait 0.5s") IMPORTACIÓN Y DISTRIBUCIÓN
+          div: strong(data-sr="enter right wait 1.0s") DE ACCESORIOS Y REFACCIONES
+          div(data-sr="wait 1.5s") PARA EL MOTOCICLISMO
+        
+      section#nosotros
+        .container.mainC
+          .col6.col-t10.col-m10.push3.push-t1.push-m1
+            article.modulo
+              h2(data="MISIÓN") MISIÓN
+              p Nuestro mayor interés es brindarte un producto de calidad con una correcta asesoría, así como un excelente servicio a un precio competitivo.
+        .container
+          .col6.col-m12
+            article.modulo
+              h2(data="TIENDA") TIENDA
+            .tiendaSlider
+              +slider('multiplebox', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300')
+          .col6.col-m12
+            article.modulo
+              h2(data="MARCAS") MARCAS
+            .marcasSlider
+              +slider('multiple', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300')
+          
+      
+      section#productos
+        .container.mainC
+          .col6.col-t12.col-m12
+            article.modulo
+              h2(data="CATEGORÍAS") CATEGORÍAS
+            .categoriasSlider
+              .slider.one
+                div 
+                  .container
+                    .col6
+                      h3 Cascos
+                      img(src="site/img/helmet.jpg", alt="Casco").w100
+                    .col6 
+                      p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, odio quidem incidunt officiis, esse eius alias! Atque iste sapiente explicabo dignissimos architecto perspiciatis enim sint quos similique! Ratione, dolorem provident.
+                div 
+                  .container
+                    .col6
+                      h3 Accesorios
+                      img(src="site/img/helmet.jpg", alt="Casco").w100
+                    .col6 
+                      p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, odio quidem incidunt officiis, esse eius alias! Atque iste sapiente explicabo dignissimos architecto perspiciatis enim sint quos similique! Ratione, dolorem provident.
+
+          .col6.col-t12.col-m12
+            article.modulo
+              h2(data="CATÁLOGOS") CATÁLOGOS
+            .catalogosSlider
+              +slider('multiplebox', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300', 'http://lorempixel.com/300/300') 
+          
+      section#distribuidor
+        .container.mainC
+          .col6.col-m12.col-t12
+            article.modulo
+              h2(data="MATERIALES") MATERIALES
+              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit culpa, tenetur temporibus, omnis dolores nesciunt officiis quisquam blanditiis reprehenderit fugit ut beatae nobis repellat! Tenetur recusandae quis, iste sit quia!
+            
+
+          .col6.col-m12.col-t12
+            article.modulo
+              h2(data="FRANQUICIAS") FRANQUICIAS
+              p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum aliquid perferendis harum maiores, dignissimos laboriosam! Velit labore optio libero dicta similique excepturi fugit sit, magnam, cum quis, dignissimos vero doloribus?
+      
+      section#promociones
+        .container.mainC
+          .col12
+            +slider('one', 'site/img/promo1.png', 'site/img/promo2.png')
+          
+      section#contacto
+        .container.mainC
+          .col6.col-m12
+            .label Envíenos un mensaje a través del siguiente formulario:
+            +formSimple('contacto@zarco.com.mx', 'contacto@zarco.com.mx', 'Nuevo mensaje del sitio ZARCO')
+            
+          .col6.col-m12
+            .label Encuéntrenos en nuestras redes sociales:
+            .socials.container
+              a(href="#").col4: i.fa.fa-facebook
+              a(href="#").col4: i.fa.fa-twitter
+              a(href="#").col4: i.fa.fa-linkedin
+            .label O a través de nuestro correo electrónico:
+            .container
+              a(href="mailto:ventas@zarco.mx").col12.mailLink ventas@zarco.mx
+
+    +scripts

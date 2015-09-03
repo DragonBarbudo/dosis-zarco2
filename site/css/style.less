@@ -1,0 +1,247 @@
+//out: style.css
+@import '../../dw/dw.less';
+
+/* ################################ CONTAINER WIDTHS: */
+@containerWidth: 960px;
+@containerWidthTablet: 480px;
+/* ################################ COLORS */
+@b: #1A1919;
+@w: #ffffff;
+@g: #eeeeee;
+@main: #C83B38;
+@mainT: rgba(112,2,0, 0.5);
+/* ################################ FONTS */
+.font{ font-family: 'Lato', sans-serif; }
+/* ################################ CLASSES */
+
+/* ################################ GENERAL */
+body{
+  .font;
+}
+
+.main{
+  width: 100%;
+  section{
+    width: 100%;
+  }
+}
+
+nav[role="main"]{
+  width: 100%;
+  background: @main;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  @media @tablet, @mobile{
+    width: 200px;
+    height: 100%;
+    top:-100%;
+    .transition(300ms);
+    &.open{
+      top:0%;
+      .transition(300ms);
+    }
+
+  }
+  ul{
+    .container;
+    @media @tablet, @mobile{
+      width: 100%;
+    }
+    li{
+      .col(12/7);
+      .col-t(10);
+      .push-t(1);
+      .col-m(10);
+      .push-m(1);
+      font-size:0.9em;
+      text-align: center;
+      @media @tablet, @mobile{
+        font-size: 0.9em;
+      }
+      a{
+        display: block;
+        color:@w;
+        padding: 10px;
+        &:hover{
+          background: @b;
+        }
+        @media @tablet, @mobile{
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+  .btnshow{
+    width: 100px;
+    height: 33px;
+    background: url(../img/showmenubtn.png);
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    margin-left: -50px;
+    @media @mobile, @tablet{cursor: pointer;}
+  }
+}
+
+.mainC{
+  padding-top: 100px;
+}
+
+section#inicio{
+  background: rgba(255,255,255,0.8);
+}
+section#nosotros{
+  background: rgba(250,230,230,0.8);
+}
+section#productos{
+  background: rgba(245,210,210,0.8);
+}
+section#distribuidor{
+  background: rgba(240,190,190,0.8);
+}
+section#promociones{
+  background: rgba(235,170,170,0.8);
+}
+section#contacto{
+  background: rgba(230,150,150,0.8);
+}
+
+.logotipo{
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.startText{
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+  background: @mainT;
+  color: @w;
+  font-size: 2em;
+  margin: 40px 0;
+  strong{
+    display: block;
+    font-size: 1.2em;
+  }
+}
+
+
+
+
+
+
+article.modulo{
+  margin: 20px 0;
+  background: @w;
+  padding: 20px 40px 30px 40px;
+  @media @tablet, @mobile{
+    padding: 10px 20px;
+  }
+  h2{
+    text-align: center;
+    color: @main;
+    font-size: 2.4em;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    @media @tablet{
+        font-size: 1.8em;
+      }
+  }
+  p{
+    color: @b;
+  }
+}
+
+
+
+
+
+#swipebox-overlay{
+  background: rgba(0,0,0,0.8);
+}
+
+
+.tiendaSlider{
+  .slick-slide{
+    background: @mainT;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+.marcasSlider, .catalogosSlider{
+  .slick-slide{
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
+.categoriasSlider{
+  .container{
+    background: @w;
+    h3{
+      text-align: center;
+      color: @main;
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    p{
+      margin: 20px;
+      color: @b;
+    }
+  }
+}
+
+
+.label{
+  background: @w;
+  padding: 20px;
+}
+label{display: none !important;}
+form{
+  input,textarea{
+    width: 100%;
+    .box-sizing(border-box);
+    padding: 10px;
+    border: 4px solid @main !important;
+    margin: 5px 0;
+    color: @b;
+    .font;
+    font-size: 1em;
+  }
+  button{
+    background: @main;
+    color: @w;
+    margin: 5px auto 25px auto;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    .font;
+    font-size: 1em;
+    &:hover{
+      background: @mainT;
+      cursor: pointer;
+    }
+  }
+}
+
+.align-center{text-align: center;}
+.socials{
+  a{
+    .mailLink;
+  }
+}
+.mailLink{
+  text-align: center;
+    background: @main;
+    padding: 10px 0;
+    color: @w;
+    text-decoration: none;
+    &:hover{
+      background: @mainT;
+    }
+}
